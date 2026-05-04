@@ -1,0 +1,105 @@
+Kateri od naštetih je primer virtualizacije?
+ Odgovor: d) Več virtualnih strojev, ki delujejo na istem strežniku.
+ Razlaga: Virtualizacija omogoča, da se fizična strojna oprema razdeli na več izoliranih virtualnih okolj z uporabo hipervizorja.
+
+Kateri viri predstavljajo možgane za obdelavo delovnih obremenitev?
+ Odgovor: a) Compute (Računska moč).
+ Razlaga: Compute viri so viri, ki zagotavljajo procesno moč, potrebno za izvajanje aplikacij in obdelavo zahtev.
+
+Ko morate v oblaku zagotoviti vir, vam _________ skoraj takoj omogoči, da ga dodelite, kam in kdaj ga potrebujete.
+ Odgovor: d) On-demand resourcing (Viri na zahtevo).
+ Razlaga: Ta koncept omogoča, da so viri uporabniku na voljo skoraj takoj po tem, ko jih zahteva oziroma dodeli.
+
+________ model uvajanja v oblaku je model, pri katerem prodajalec omogoči uporabo skupne infrastrukture, vključno z računalniškimi, shranjevalnimi in omrežnimi viri, ki jih je mogoče zagotoviti na zahtevo in do katerih je 
+običajno dostopno prek interneta.
+ Odgovor: d) Public (Javni oblak).
+ Razlaga: Javni oblak je model, kjer ponudnik omogoči uporabo skupne infrastrukture (računska moč, shramba, omrežje) širši javnosti prek interneta.
+
+Kako se običajno zaračunavajo stroški za oblačne vire?
+ Odgovor: a) Merjenje na podlagi porabe (Utility-based metering), kjer plačate le tisto, kar porabite.
+ Razlaga: Ena od ključnih značilnosti oblaka je, da stroški niso fiksni, temveč temeljijo na dejanski uporabi virov.
+
+Kot primer pomembne značilnosti računalništva v oblaku, recimo, da danes namestimo majhno spletno mesto. Naslednji teden mu dodamo kompleksne storitve umetne inteligence, ki jih zagotavlja ponudnik javnega oblaka. Naslednji 
+teden namestimo svoje spletno mesto v več regijah po vsem svetu.
+Kateri koncept ali značilnost računalništva v oblaku to predstavlja?
+ Odgovor: a) High availability.
+ Razlaga: Možnost hitrega dodajanja kompleksnih novih storitev in globalna širitev infrastrukture brez fizičnih omejitev predstavlja visoko dostopnost.
+
+Model ____________________ storitve v oblaku ponuja ravnovesje med prilagajanjem in uporabniškim nadzorom, kar razvijalcem omogoča, da se osredotočijo na načrtovanje na aplikacijski ravni, medtem ko storitev obravnava 
+administracijo virtualne arhitekture, vključno z omrežjem in operacijskim sistemom.
+ Odgovor: b) Platform-as-a-Service (PaaS).
+ Razlaga: PaaS razbremeni uporabnika upravljanja operacijskega sistema in omrežja, hkrati pa mu še vedno omogoča razvoj lastnih aplikacij.
+
+Kateri od naštetih elementov nista izključna odgovornost strank javnega oblaka? (Izberite 2)
+ Odgovor: a) Patch Management (Upravljanje popravkov) in d) Network Controls (Omrežne kontrole).
+ Razlaga: Po modelu deljene odgovornosti so nekatere plasti varnosti in vzdrževanja delno ali v celoti v domeni ponudnika, odvisno od storitve.
+
+Kateri vir v oblaku shranjuje in zadržuje podatke v skoraj neomejenih količinah?
+ Odgovor: d) Storage (Shramba).
+ Razlaga: Shramba je namenski vir za ohranjanje podatkov, ki v oblaku nudi izjemno visoko stopnjo razširljivosti.
+
+Model ____________________ storitve v oblaku ponuja največjo količino uporabniških prilagoditev in nadzora, vendar zahteva največjo količino uporabniške administracije, vključno z operacijskim sistemom, ne pa tudi fizične 
+strojne opreme.
+ Odgovor: a) Infrastructure-as-a-Service (IaaS).
+ Razlaga: IaaS daje uporabniku največ nadzora nad virtualno arhitekturo, vključno z operacijskim sistemom, medtem ko ponudnik skrbi le za fizično opremo.
+
+Kakšna je prednost računalništva v oblaku, ki vam omogoča, da kadar koli povečate ali zmanjšate moč ali količino virov brez obsežne namestitve ali fizičnih postopkov zagotavljanja?
+ Odgovor: b) Scalability (Skalabilnost).
+ Razlaga: Skalabilnost je sposobnost sistema, da se hitro prilagodi povečanim ali zmanjšanim zahtevam po virih.
+
+Zaposlili so vas kot poletno IT-praktikantko za majhno, a hitro rastočo verigo restavracij. Lastnica verige restavracij želi razširiti svojo spletno prisotnost z ustvarjanjem spletne strani, ki bo dodala več spletnih funkcij, 
+kot so prenosljivi meniji, rezervacije v realnem času, spletno naročanje, spletna e-pošta in možen interaktivni klepet med delovnim časom restavracije.
+Spletna stran bo imela veliko zahtev glede dostopa od 16.00 do 23.00 ure, izven konic pa bo dostop počasnejši. Lastnica nima nobenih izkušenj z IT in se ne želi ukvarjati z dodatnim delom vzdrževanja IT-opreme.
+Kaj ji priporočate?
+ Odgovor: b) Implementacijo javnega oblačnega okolja.
+ Razlaga: Javni oblak je idealen za tiste, ki želijo storitve na zahtevo brez upravljanja fizične strojne opreme in z avtomatskim prilagajanjem obremenitvam.
+
+Ponudniki javnega oblaka imajo skupno definicijo, kateri vidiki varnosti so odgovornost prodajalca in kateri vidiki varnosti so odgovornost končnega uporabnika. To se imenuje model deljene odgovornosti.
+Katera od naslednjih stvari bi bila v skladu z modelom deljene odgovornosti odgovornost končnega uporabnika?
+ Odgovor: d) Šifriranje podatkov, shranjenih v storitvah, kot je Amazon EBS.
+ Razlaga: Ponudnik zagotavlja varnost "oblaka" (npr. fizični dostop, delovanje storitve), uporabnik pa je odgovoren za varnost svojih podatkov "v oblaku".
+
+Model ___________________ ne zahteva namestitve programske opreme in se osredotoča na preprostost zasnove in enostavnost uporabe.
+Ponuja minimalno raven prilagajanja storitev.
+ Odgovor: b) Software-as-a-Service (SaaS).
+ Razlaga: SaaS ponuja končne aplikacije prek spletnega brskalnika, kjer uporabnik nima skrbi z upravljanjem ali prilagajanjem ozadja.
+
+Vodite ekipo razvijalcev pri projektu, katerega cilj je izboljšati uporabniško izkušnjo na spletni strani podjetja s kreditnimi karticami.
+Rešitev zahteva, da razvijalci napišejo kodo po meri, ki je usmerjena v poslovne zahteve. Vaša stranka želi, da razvijalci ne bi imeli režijskih stroškov upravljanja operacijskih sistemov, izvajalnih okolj in vmesne programske 
+opreme.
+Katero od naslednjih ponudb v oblaku bi predlagali svoji stranki?
+ Odgovor: b) Platform as a Service (PaaS).
+ Razlaga: PaaS omogoča razvojnikom, da se osredotočijo izključno na pisanje poslovne kode, medtem ko platforma avtomatsko upravlja operacijske sisteme in izvajalna okolja.
+
+Podjetje uporablja kombinacijo strojne opreme, ki jo upravlja prodajalec, kot so AWS, Azure ali Google Cloud, in lastne strojne opreme na lokaciji za gostovanje virtualiziranih virov. To je primer modela uvajanja v oblaku 
+___________.
+ Odgovor: c) Hybrid (Hibridni oblak).
+ Razlaga: Hibridni model je kombinacija javnega oblaka in lokalne (on-premise) infrastrukture.
+
+Lahko bi trdili, da je varnost v javnem oblaku boljša od varnosti na lokaciji. Zakaj? (Izberite 2 odgovora)
+ Odgovor: a) Izpolnjevati morajo mednarodne varnostne zahteve in c) Izpolnjevati morajo varnostne zahteve različnih poslovnih panog.
+ Razlaga: Veliki ponudniki morajo zaradi svoje velikosti in raznolikosti strank upoštevati strožje globalne standarde in certifikate, ki si jih manjša podjetja težko privoščijo.
+
+Kaj je ključna prednost virtualizacije?
+ Odgovor: a) Zmanjšani kapitalski izdatki.
+ Razlaga: Virtualizacija omogoča boljši izkoristek strojne opreme, kar pomeni, da podjetju ni treba kupovati toliko fizičnih strežnikov.
+
+Kateri od naslednjih konceptov računalništva v oblaku se nanaša na povečanje ali zmanjšanje računalniških virov glede na povpraševanje?
+ Odgovor: a) Elasticity (Elastičnost).
+ Razlaga: Elastičnost pomeni sposobnost sistema, da se samodejno in dinamično razširi ali skrči glede na trenutno potrebo.
+
+Kateri viri omogočajo komunikacijo med vsemi ostalimi viri?
+ Odgovor: a) Network (Omrežje).
+ Razlaga: Omrežni viri zagotavljajo povezljivost, ki je nujna za izmenjavo podatkov med procesnimi enotami in shrambo.
+
+V čem sta si zasebni in javni oblak podobna?
+ Odgovor: c) Oba uporabljata virtualizacijo, da se ločita od tradicionalnih strežnikov.
+ Razlaga: Čeprav se razlikujeta po lastništvu in dostopnosti, oba modela temeljita na virtualizaciji.
+
+Kaj NI značilnost javnega oblaka?
+ Odgovor: b) Enkratni stroški za virtualne vire.
+ Razlaga: Za javni oblak so značilni tekoči stroški po porabi, ne pa enkratni fiksni nakupi virov.
+
+Kateri tip vira shranjuje strukturirane podatke za aplikacije?
+ Odgovor: d) Database (Podatkovna baza).
+ Razlaga: Medtem ko "Storage" shranjuje datoteke na splošno, so podatkovne baze specifičen vir za organizirano in strukturirano hrambo podatkov.

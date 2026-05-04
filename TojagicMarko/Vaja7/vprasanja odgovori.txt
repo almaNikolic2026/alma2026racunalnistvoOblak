@@ -1,0 +1,53 @@
+Kako se imenuje naslov računalnika, s katerim ga identificiramo v omrežju?
+IP naslov.
+
+Kaj je data center?
+Podatkovni center, tam se hrani strežniška in omrežna oprema.
+
+Kaj pomeni CIDR zapis 192.168.0.16/28?
+Omrežje 192.168.0.16 z masko /28 (14 uporabnih IP naslovov).
+
+Kako naredimo podomrežje privatno?
+Ne dodamo Internet Gateway ali ne nastavimo poti do njega v Route Table.
+
+Kako naredimo podomrežje javno?
+Dodamo Internet Gateway in ga povežemo z Route Table (pot 0.0.0.0/0).
+
+Kaj dosežemo, če imamo vire v različnih AZ?
+Visoko razpoložljivost in odpornost na izpad cone.
+
+Kaj je scp? Čemu služi? Kaj lahko uporabimo namesto scp?
+Secure Copy je varen prenos datotek prek SSH. Alternativa je lahko SFTP ali rsync.
+
+Čemu je namenjena "routing table"
+Usmerjanje prometa med podomrežji in internetom.
+
+Kaj moramo nastaviti, da so računalniki podomrežjih vidni med seboj?
+Route Table s potmi do vseh podomrežij (lokalno) oziroma Security Groups (dovoljen vhodni promet).
+
+Zakaj v tej infrastrukturi uporabljamo ločene podomrežje za spletni strežnik in podatkovni strežnik?
+Varnost, ločitev frontend in backend nivoja.
+
+Zakaj mora biti spletni strežnik v javnem subnetu, podatkovni strežnik pa v privatnem subnetu?
+Spletni mora biti dostopen iz interneta, baza samo znotraj VPC.
+
+Zakaj ne dovolimo neposrednega dostopa iz interneta do podatkovne baze? Kaj bi se lahko zgodilo?
+Nepooblaščen dostop, kraja ali izbris podatkov, ransomware napad.
+
+Zakaj uporabljamo security groups, če imamo že podomrežja?
+Da imamo požarni zid na nivoju instance, podomrežja so omrežna segmentacija.
+
+Zakaj morata biti subnet2 in subnet3 v različnih availability zonah? Kaj s tem pridobimo?
+Visoka razpoložljivost, če ena AZ izpade, aplikacija v drugi v večini primerov še vedno deluje.
+
+Zakaj se za dostop do EC2 uporablja SSH ključ, ne pa geslo?
+Večja varnost, ključ je praktično nemogoče uganiti z grobo silo.
+
+Kaj bi se zgodilo, če bi bila MariaDB baza v javnem subnetu z odprtim portom 3306 za internet?
+Lahko bi se zgodil vdor v bazo zelo enostavno, visoka izpostavljenost vseh podatkov na internetu, okužba z malware-om.
+
+Zakaj mora imeti EC2 strežnik z aplikacijo dostop do podatkovne baze preko privatnega omrežja (VPC) in ne preko javnega IP?
+Zaradi varnosti, promet ostane znotraj AWS, ne gre čez nezaščiten internet.
+
+Kaj bi se zgodilo, če bi izbrisali internet gateway iz VPC? Katere storitve bi prenehale delovati?
+Host bi bil nedosegljiv, spletni strežnik ne bi več prejemal prometa iz interneta.

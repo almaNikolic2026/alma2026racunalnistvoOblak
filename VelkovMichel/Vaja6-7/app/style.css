@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b1220;
+  --panel: #121a2c;
+  --line: #28344f;
+  --text: #e6edf7;
+  --muted: #9eb0cc;
+  --accent: #22c55e;
+  --accent-2: #16a34a;
+  --danger: #ef4444;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Segoe UI, Tahoma, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -20%, #1e3a8a55, transparent),
+    radial-gradient(900px 500px at 90% -10%, #14532d55, transparent),
+    var(--bg);
+}
+
+.container {
+  width: min(92vw, 880px);
+  margin: 36px auto;
+}
+
+.card {
+  background: linear-gradient(180deg, #162038, var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+.row {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #3a4969;
+  background: #0f172a;
+  color: var(--text);
+}
+
+input:focus {
+  outline: 2px solid #60a5fa;
+  border-color: #60a5fa;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary {
+  color: #052e16;
+  background: linear-gradient(180deg, #4ade80, var(--accent));
+}
+
+.btn-primary:hover {
+  background: linear-gradient(180deg, #34d399, var(--accent-2));
+}
+
+.btn-secondary {
+  color: var(--text);
+  background: #1f2937;
+  border: 1px solid #364152;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #2f3b55;
+  text-align: left;
+  padding: 10px 8px;
+}
+
+.table th {
+  color: #cde0ff;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.badge-ok {
+  color: #052e16;
+  background: #86efac;
+}
+
+.badge-error {
+  color: #450a0a;
+  background: #fca5a5;
+}
+
+.code {
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background: #0f172a;
+  color: #fda4af;
+  overflow-x: auto;
+}

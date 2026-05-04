@@ -1,0 +1,25 @@
+1. d) Več računalnikov v enem fizičnem ohišju.
+2. a) Deli, ki dejansko razmišljajo in poganjajo programe.
+3. d) Stvari dobiš takoj, ko jih klikneš in potrebuješ.
+4. d) Infrastruktura, ki si jo deliš z ostalimi uporabniki prek interneta.
+5. a) Plačaš samo toliko, kolikor dejansko porabiš (kot elektrika).
+6. b) Stran deluje po celem svetu, tudi če gre kje kaj narobe.
+7. b) Ti delaš aplikacijo, oblak pa sam skrbi za sistem spodaj.
+8. b) Zagotavljanje, da stvar vedno in povsod dela.
+9. a, d) Za popravke in mrežo skrbita oba, ti in ponudnik.
+10. d) Prostor, kjer varno hraniš datoteke.
+11. a) Imaš največ kontrole, sam nastavljaš vse, razen fizične mašine.
+12. b) Hitro povečanje moči, ko imaš veliko obiskovalcev.
+13. b) Najboljše za nekoga brez znanja, ker vse naredi ponudnik.
+14. d) Ti si odgovoren, da svoje podatke zakleneš/šifriraš.
+15. b) Samo uporabljaš program (kot npr. Facebook ali Mail).
+16. b) Pišeš samo kodo, ne zanima te, na čem se poganja.
+17. c) Mešanica tvojih domačih strežnikov in oblaka.
+18. a, c) Ponudniki morajo slediti strogim svetovnim pravilom varnosti.
+19. a) Prihraniš denar, ker ti ni treba kupovati dragih mašin.
+20. a) Samodejno dodajanje moči, ko je naval, in zmanjšanje, ko ni nikogar.
+21. a) Povezave, ki skrbijo, da se vsi deli med sabo pogovarjajo.
+22. c) Oba uporabljata tehnologijo, ki razdeli eno mašino na več delov.
+23. b) V oblaku ni enkratnih plačil, plačuje se sproti.
+24. a) Sam moraš poskrbeti za varnost svojih shranjenih datotek.
+25. d) Poseben prostor za urejene podatke, ki jih aplikacija hitro najde.

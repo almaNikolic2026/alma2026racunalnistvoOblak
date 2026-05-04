@@ -1,0 +1,29 @@
+# 1. Ustvarjanje lokalne mape in podmap
+mkdir velkov_michel
+cd velkov_michel
+mkdir srecanje1
+mkdir srecanje2
+mkdir srecanje3
+mkdir srecanje4
+
+# 2. Inicializacija lokalnega repozitorija
+git init
+
+# 3. Nastavitev identitete avtorja (samo prvič)
+git config --global user.name "Michel Velkov"
+git config --global user.email "michel.velkov@gmail.com"
+
+# 4. Dodajanje datotek in prvi commit
+git add .
+git commit -m "Prva verzija projekta"
+
+# 5. Povezava z GitHub repozitorijem
+git remote add origin https://github.com/almaVelkov2026/racunalnistvo-v-oblaku.git
+git branch -M main
+git push -u origin main
+
+
+# 6. Dodajanje nove vsebine v srecanje4, novi commit in push
+git add .
+git commit -m "Dodana vsebina za 4. domaco nalogo"
+git push

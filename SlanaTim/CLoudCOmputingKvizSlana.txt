@@ -1,0 +1,25 @@
+1d – Ker dokument razlaga virtualizacijo kot več navideznih strojev, ki tečejo na enem fizičnem strežniku.
+2a – Compute predstavlja procesno moč, ki poganja aplikacije in obdeluje zahtevke.
+3d – On-demand resourcing pomeni, da je vir v oblaku na voljo skoraj takoj, ko ga potrebuješ.
+4d – Public cloud je model, kjer ponudnik nudi skupno infrastrukturo prek interneta na zahtevo.
+5a – Dokument pove, da v oblaku praviloma plačaš samo toliko, kolikor dejansko uporabljaš.
+6-1 – Primer kaže, da lahko hitro dodajaš nove storitve in vire, kar ustreza on-demand resourcing.
+7b – PaaS razvijalcem omogoča delo na aplikaciji, medtem ko ponudnik upravlja osnovno platformo in OS.
+8a – Growth pomeni, da lahko organizacija z oblakom hitro raste in doseže tudi globalne uporabnike.
+9a + d – Pri teh področjih del odgovornosti prevzame ponudnik, ker v oblaku velja model deljene odgovornosti.
+10d – Storage je namenjen shranjevanju in ohranjanju podatkov v oblaku.
+11a – IaaS daje največ nadzora in prilagodljivosti, tudi nad operacijskim sistemom.
+12b – Scalability pomeni, da lahko količino ali moč virov povečuješ in zmanjšuješ glede na potrebe.
+13b – Public cloud je najbolj smiseln, ker omogoča enostavno skaliranje brez vzdrževanja lastne opreme.14
+14d – Šifriranje podatkov je po modelu deljene odgovornosti naloga uporabnika oblaka.
+15b – SaaS je popolnoma upravljana programska storitev brez potrebe po lokalni namestitvi.
+16b – PaaS je primeren, ko razvijalci pišejo lastno kodo, ne želijo pa upravljati OS, runtime okolja in middleware-a.
+17c – Hybrid cloud pomeni kombinacijo zasebnega in javnega oblaka.
+18b + c – Dokument poudari, da imajo javni ponudniki zelo visoke varnostne standarde in morajo izpolnjevati številne skladnostne zahteve.
+19a – Z virtualizacijo potrebuješ manj fizične opreme, zato se znižajo kapitalski stroški.
+20a – Elasticity opisuje prilagajanje količine virov glede na trenutno potrebo.
+21a – Network skrbi za povezljivost med drugimi viri, kot so compute, storage in database.
+22c – Obe okolji uporabljata virtualizacijo, zato sta si private in public cloud v tem podobna.
+23b – Enkratni fiksni stroški niso značilnost public clouda, ker tam velja sprotno obračunavanje porabe.
+24a – Tudi tukaj je šifriranje podatkov odgovornost uporabnika, ne ponudnika infrastrukture.
+25d – Database je namenjen shranjevanju strukturiranih podatkov, ki jih uporabljajo aplikacije.

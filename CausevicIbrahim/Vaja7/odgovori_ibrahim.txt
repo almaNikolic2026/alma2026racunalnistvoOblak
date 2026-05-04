@@ -1,0 +1,57 @@
+-Kako se imenuje naslov računalnika, s katerim ga identificiramo v omrežju?
+IP naslov
+
+-Kaj je data center?
+To je stavba, kjer se nahaja fizična oprema, mrezna oprema, strežniki..
+
+-Kaj pomeni CIDR zapis 192.168.0.16/28?
+To je:
+IP omrežja – 192.168.0.16
+Maska: 255.255.255.240
+28 bitov za omrežje in 4 za hoste
+2x2x2x2=16 naslovov -2 
+14 uporabnih naslovov
+
+-Kako naredimo podomrežje privatno?
+Tako da nima internet gatewaya v route table.
+
+-Kako naredimo podomrežje javno?
+Tako da ima internet gateway in da imajo javne IP v omrežju
+
+-Kaj dosežemo, če imamo vire v različnih AZ?
+Večja razpološljivost pa tudi če se kaj zgodi s AZ, lahko deluje v drugi normalno.
+
+-Kaj je scp? Čemu služi? Kaj lahko uporabimo namesto scp?
+scp-secure copy sluzi za varen prenos datotek prek ssh med računalniki. Namesto scp se lahko uporabi sftp, winscp.
+
+-Čemu je namenjena "routing table"
+Routing table pove prek katere poti gre promet v omrežju.
+
+-Kaj moramo nastaviti, da so računalniki podomrežjih vidni med seboj?
+Morajo biti točne poti nastavljene in ustrezna security groups pravila, kot smo delali v AWS ko smo dodajali security groups za spletno stran npr.(protokol HTTP)
+
+-Zakaj v tej infrastrukturi uporabljamo ločene podomrežje za spletni strežnik in podatkovni strežnik?
+Zaradi varnosti in boljšega nadzora, če nam je vse porazdeljeno se je lažje orijentirati v sistemu.
+
+-Zakaj mora biti spletni strežnik v javnem subnetu, podatkovni strežnik pa v privatnem subnetu?
+Zato ker spletni strežnik mora biti dosegljiv prek interneta da lahko uporabnik vidi kar mu strežemo, podatkovni pa je za shranjevanje podatkov.
+
+-Zakaj ne dovolimo neposrednega dostopa iz interneta do podatkovne baze? Kaj bi se lahko zgodilo?
+Lahko bi prišlo do kraje podatkov, s tem pa tudi nepooblaščen dostop in bi nam lahko nekdo izbrisal vse podatke.
+
+-Zakaj uporabljamo security groups, če imamo že podomrežja?
+Ker nam security groups ščiti vsako posamezno instanco s tem da ima rules kateri promet je dovoljen in kateri ne.
+
+-Zakaj morata biti subnet2 in subnet3 v različnih availability zonah? Kaj s tem pridobimo?
+Pridobimo to, da če se zgodi da ena AZ odpove, sistem nadaljuje z delom. Potem nista odvisna od prvega.
+
+-Zakaj se za dostop do EC2 uporablja SSH ključ, ne pa geslo?
+Ker je SSH ključ bolj varen kot geslo. Gesla se da uganiti in napasti, SSH pa velik težje.
+
+-Kaj bi se zgodilo, če bi bila MariaDB baza v javnem subnetu z odprtim portom 3306 za internet?
+Vsi podatki oz celotna PB bi bila vidna na internetu, lahko bi se zgodila kraja podatkov, vdor...
+
+-Zakaj mora imeti EC2 strežnik z aplikacijo dostop do podatkovne baze preko privatnega omrežja (VPC) in ne preko javnega IP?
+Ker je promet v VPC bolj varen ker ni na internetu.
+-Kaj bi se zgodilo, če bi izbrisali internet gateway iz VPC? Katere storitve bi prenehale delovati?
+Instance ne bi imele dostop do interneta, nobena storitev povezana z internetom ne bi delala. V VPC pa bi instance normalno komunicirale naprej.

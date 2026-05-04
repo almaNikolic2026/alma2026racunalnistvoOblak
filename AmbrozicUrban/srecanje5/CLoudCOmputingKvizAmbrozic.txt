@@ -1,0 +1,101 @@
+KVIZ — What is Cloud Computing
+
+
+1. Odločil sem se za odgovor d).
+Virtualizacija pomeni, da na enem fizičnem strežniku teče več virtualnih strojev hkrati prek hypervisorja.
+
+
+2. Odločil sem se za odgovor a).
+CPU in RAM so tisti, ki dejansko izvajajo obdelavo podatkov in poganjajo aplikacije. Network in shramba samo prenašata oziroma hranita podatke.
+
+
+3. Odločil sem se za odgovor d).
+On-demand resourcing pomeni, da vir dobiš takoj, ko ga potrebuješ, brez čakanja na namestitev strojne opreme.
+
+
+4. Odločil sem se za odgovor d).
+Javni (public) oblak je definiran kot deljena infrastruktura ponudnika, do katere uporabniki dostopajo prek interneta. Hibridni in zasebni model imata drugačne lastnosti.
+
+
+5. Odločil sem se za odgovor a).
+V oblaku plačaš samo to, kar dejansko porabiš, podobno kot pri elektriki ali vodi, kar je ena glavnih prednosti oblačnih storitev.
+
+
+6. Odločil sem se za odgovor 1.
+Primer prikazuje, kako lahko po potrebi dodajaš nove storitve in širiš sistem v različne regije, ne da bi vnaprej kupoval strojno opremo. To je bistvo on-demand resourcinga.
+
+
+7. Odločil sem se za odgovor b).
+PaaS je vmesni model, kjer ponudnik skrbi za OS, mrežo in runtime, razvijalec pa se ukvarja samo z aplikacijo. To je bistvo ravnovesja med IaaS in SaaS.
+
+
+8. Odločil sem se za odgovor a).
+Primer opisuje rast spletne strani — od majhne strani do globalne aplikacije z dodatnimi storitvami. Med ponujenimi odgovori je "Growth" (rast) tisti, ki najbolje opisuje to širjenje.
+
+
+9. Odločil sem se za odgovora a) in d).
+Patch management in network controls sta deljeni odgovornosti — del skrbi ponudnik (osnovna infrastruktura, mreža podatkovnega centra), del pa uporabnik. Data protection in Web client protection sta v celoti odgovornost uporabnika.
+
+
+10. Odločil sem se za odgovor d).
+Storage je vir, namenjen hranjenju podatkov. V oblaku je praktično neomejen, ker ponudnik dodaja diske po potrebi.
+
+
+11. Odločil sem se za odgovor a).
+Pri IaaS uporabnik upravlja vse od operacijskega sistema navzgor, kar pomeni največ svobode, ampak tudi največ dela. Ponudnik skrbi samo za fizično strojno opremo in virtualizacijo.
+
+
+12. Odločil sem se za odgovor b).
+Skalabilnost pomeni, da lahko vir povečaš ali zmanjšaš po potrebi - ena izmed glavnih prednosti oblačnih storitev.
+
+
+13. Odločil sem se za odgovor b).
+Lastnica nima IT znanja in noče vzdrževati strojne opreme, hkrati pa potrebuje skalabilnost zaradi različnih obremenitev čez dan. Javni oblak je v takem primeru najboljša rešitev — vse vzdržuje ponudnik.
+
+
+14. Odločil sem se za odgovor d).
+Šifriranje podatkov, ki jih shranjujemo v oblaku, je vedno odgovornost uporabnika. Ponudnik skrbi za infrastrukturo in dostopnost, ne pa za to, kako uporabnik zaščiti svoje podatke.
+
+
+15. Odločil sem se za odgovor b).
+SaaS je končna programska oprema, do katere dostopaš prek brskalnika brez nameščanja (npr. Gmail, GitHub). Prilagajanje je minimalno, ker je vse vnaprej pripravljeno.
+
+
+16. Odločil sem se za odgovor b).
+PaaS je narejen točno za to — razvijalci samo pišejo kodo, ponudnik pa skrbi za vse pod aplikacijo (OS, runtime). Tako se ekipa lahko osredotoči samo na poslovno logiko.
+
+
+17. Odločil sem se za odgovor c).
+Kombinacija javnega oblaka in lastne strojne opreme je definicija hibridnega modela.
+
+
+18. Odločil sem se za odgovora a) in c).
+Veliki ponudniki morajo izpolnjevati mednarodne varnostne standarde (ISO, GDPR ipd.) ter zahteve različnih panog (finance, zdravstvo, vlada). Tega si manjše podjetje običajno ne more privoščiti.
+
+
+19. Odločil sem se za odgovor a).
+Z virtualizacijo na isti fizični strežnik postavimo več virtualnih strojev, zato potrebujemo manj strojne opreme. To pomeni bistveno manjše začetne stroške.
+
+
+20. Odločil sem se za odgovor a).
+Elastičnost pomeni avtomatsko prilagajanje virov trenutni obremenitvi. Skalabilnost je podobna, ampak elastičnost je bolj dinamična in se zgodi v realnem času.
+
+
+21. Odločil sem se za odgovor a).
+Mreža je tisto, kar povezuje vire med seboj in z internetom. Brez nje ostali viri ne bi mogli komunicirati.
+
+
+22. Odločil sem se za odgovor c).
+Tako zasebni kot javni oblak temeljita na virtualizaciji, kar ju razlikuje od klasičnih strežnikov v podjetjih. Razlika med njima je samo v tem, kdo ima lastništvo oz. dostop ter kako dostopa.
+
+
+23. Odločil sem se za odgovor b).
+Javni oblak se vedno plačuje sproti glede na porabo, ne pa z enkratnim plačilom. Skalabilnost, deljena infrastruktura in utility-based metering pa so značilnosti javnega oblaka.
+
+
+24. Odločil sem se za odgovor a).
+Šifriranje podatkov v oblačni shrambi je naloga uporabnika. Ponudnik skrbi za samo storitev, ne pa za vsebino, ki jo nalagamo.
+
+
+25. Odločil sem se za odgovor d).
+Strukturirani podatki (npr. tabele) se hranijo v podatkovnih bazah, ne v navadnem storage-u. Storage je bolj namenjen datotekam in objektom (npr. slike, dokumenti).

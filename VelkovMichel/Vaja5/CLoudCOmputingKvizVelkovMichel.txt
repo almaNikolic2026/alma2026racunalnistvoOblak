@@ -1,0 +1,77 @@
+KVIZ - What is Cloud Computing
+Student: Velkov Michel
+
+1. Izbral sem d.
+Razlaga: Virtualizacija pomeni, da na isti fizicni infrastrukturi tece vec virtualnih sistemov.
+
+2. Izbral sem a.
+Razlaga: Compute predstavlja procesorsko moc in pomnilnik za izvajanje aplikacij.
+
+3. Izbral sem d.
+Razlaga: On-demand pomeni takojsnjo dodelitev virov, ko jih potrebujem.
+
+4. Izbral sem d.
+Razlaga: Public cloud je deljena infrastruktura ponudnika, dostopna prek interneta.
+
+5. Izbral sem a.
+Razlaga: V oblaku placas porabo, ne fiksnega nakupa celotne opreme.
+
+6. Izbral sem 1.
+Razlaga: Primer opisuje hitro dodajanje virov glede na trenutno potrebo.
+
+7. Izbral sem b.
+Razlaga: PaaS omogoca razvoj aplikacije, medtem ko platformo upravlja ponudnik.
+
+8. Izbral sem a.
+Razlaga: Opisan je scenarij rasti storitve od manjse aplikacije do vecje resitve.
+
+9. Izbral sem a in d.
+Razlaga: Del varnosti je na ponudniku, del pa ostane odgovornost uporabnika.
+
+10. Izbral sem d.
+Razlaga: Storage je namenjen hranjenju podatkov in datotek.
+
+11. Izbral sem a.
+Razlaga: Pri IaaS uporabnik upravlja vec slojev sistema, vkljucno z OS.
+
+12. Izbral sem b.
+Razlaga: Skalabilnost pomeni povecanje ali zmanjsanje virov po potrebi.
+
+13. Izbral sem b.
+Razlaga: Public cloud je primeren, ko potrebujes prilagajanje obremenitvi brez vzdrzevanja streznikov.
+
+14. Izbral sem d.
+Razlaga: Zascita vsebine podatkov (npr. sifriranje) je odgovornost uporabnika.
+
+15. Izbral sem b.
+Razlaga: SaaS je pripravljena aplikacija, ki jo uporabljas prek spleta.
+
+16. Izbral sem b.
+Razlaga: Pri PaaS se ekipa osredotoci na kodo, infrastruktura pa je upravljana.
+
+17. Izbral sem c.
+Razlaga: Hibridni model zdruzuje javni oblak in lastno okolje.
+
+18. Izbral sem a in c.
+Razlaga: Veliki ponudniki morajo slediti standardom in regulativam razlicnih panog.
+
+19. Izbral sem a.
+Razlaga: Virtualizacija zmanjsa potrebo po fizicni opremi in zacetnih stroskih.
+
+20. Izbral sem a.
+Razlaga: Elasticnost pomeni samodejno prilagajanje virov trenutni obremenitvi.
+
+21. Izbral sem a.
+Razlaga: Omrezje povezuje vse komponente, da lahko komunicirajo.
+
+22. Izbral sem c.
+Razlaga: Tako public kot private cloud gradita na virtualizaciji za ucinkovito rabo virov.
+
+23. Izbral sem b.
+Razlaga: Obracun v javnem oblaku temelji na dejanski porabi storitev.
+
+24. Izbral sem a.
+Razlaga: Uporabnik je odgovoren za zascito svojih podatkov in kljucev.
+
+25. Izbral sem d.
+Razlaga: Strukturirani podatki se praviloma hranijo v podatkovnih bazah.

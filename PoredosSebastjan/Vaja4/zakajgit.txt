@@ -1,0 +1,11 @@
+Zakaj uporabljamo Git?
+Git je sistem za nadzor verzij (version control). Uporablja se zato, da:
+
+shranjuješ zgodovino sprememb kode (lahko se vrneš nazaj)
+delaš na projektu skupaj z drugimi (brez konflikta)
+delaš več verzij (branching) in jih kasneje združiš
+imaš varnostno kopijo projekta
+Na kratko: Git ti omogoča nadzor, varnost in sodelovanje pri razvoju kode
+
+Zakaj ukazi in ne GUI
+Ukazi (CLI) uporabljamo namesto GUI, ker so hitrejši in učinkovitejši, saj lahko z enim ukazom naredimo več stvari. Dajejo tudi več nadzora, ker imamo dostop do vseh Git funkcij, medtem ko GUI pogosto ne pokaže vsega. Primeren je tudi, ker na drugih sistemih uporabimo vedno iste ukaze
