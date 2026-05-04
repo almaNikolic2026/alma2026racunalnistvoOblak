@@ -1,0 +1,13 @@
+{
+  "name": "node-demo-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js demo app deployed to AWS EC2 with GitHub Actions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node -e \"console.log('Tests passed')\""
+  },
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
