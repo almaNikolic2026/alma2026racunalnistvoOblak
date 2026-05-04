@@ -1,0 +1,25 @@
+1. d - Ker je to definicija virtualizacije.
+2. a - Compute predstavlja procesor, ki izvaja aplikacije in obdeluje zahteve.
+3. d - Omogoča, da vire ustvariš in uporabljaš takoj, ko jih potrebuješ.
+4. d - Javni oblak ponuja skupno infrastrukturo več uporabnikom prek interneta.
+5. a - Plačaš samo dejansko porabljene vire, podobno kot pri elektriki.
+6. 1 - Vire lahko hitro dodajaš in uporabljaš glede na potrebe.
+7. b - Omogoča razvoj aplikacij, medtem ko ponudnik upravlja infrastrukturo in operacijski sistem.
+8. a - Omogoča postopno širjenje aplikacije in dodajanje novih funkcij ter lokacij.
+9. a, d - Za te naloge v javnem oblaku pogosto skrbi ponudnik (shared responsibility model).
+10. d - Omogoča shranjevanje podatkov v skoraj neomejeni količini.
+11. a - Uporabnik upravlja OS in okolje, ponudnik pa samo fizično infrastrukturo.
+12. b - Omogoča povečanje ali zmanjšanje virov po potrebi.
+13. b - Javni oblak omogoča skaliranje glede na obremenitev brez upravljanja infrastrukture.
+14. d - Uporabnik je odgovoren za zaščito svojih podatkov (npr. šifriranje), ne za infrastrukturo.
+15. b - Uporabnik uporablja aplikacijo brez namestitve, z malo možnosti prilagajanja.
+16. b - Razvijalci se osredotočijo na kodo, infrastrukturo in okolje pa upravlja ponudnik.
+17. c - Hibridni oblak združuje javni oblak in lokalno infrastrukturo.
+18. a, c - Ponudniki morajo izpolnjevati stroge standarde in zahteve različnih panog, ni pa nujno, da imajo boljšo varnost.
+19. a - Virtualizacija omogoča več virtualnih sistemov na eni fizični napravi, zato je potrebne manj strojne opreme.
+20. a - Omogoča samodejno prilagajanje virov glede na trenutno potrebo.
+21. a - Omogoča povezljivost med vsemi viri in njihovo komunikacijo.
+22. c - Oba modela uporabljata virtualizacijo za učinkovito upravljanje virov.
+23. b - V javnem oblaku plačuješ po uporabi, ne z enkratnim plačilom.
+24. a - Uporabnik skrbi za zaščito svojih podatkov (npr. šifriranje), ne za infrastrukturo.
+25. d - Podatkovna baza shranjuje strukturirane podatke, ki jih uporabljajo aplikacije.

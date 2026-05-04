@@ -1,2 +1,0 @@
-Sebastjan
-Poredoš

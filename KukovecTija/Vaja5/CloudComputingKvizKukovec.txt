@@ -1,0 +1,49 @@
+1.) D => Virtualizacija je tehnologija, ki nam omogoča, da en fizičen računalnik (Server) razdelimo na več navideznih (Virtualnih)
+
+2.) A => V oblaku se izraz Compute nanaša na "Možgane" sistema ti dejansko izvajajo ukaze in obdelujejo podatke.
+
+3.) D =>  On-demand resourcing je ključna lastnost računalništva v oblaku, ki nam omogoča, da pridemo do strežnikov ali baze podatkov pridemo z nekaj kliki.
+
+4.) D => Javni oblak je model, kjer ponudnik ponuja svojo infrastrukturo uporabnikom preko interneta.
+
+5.) A => V oblaku se stroški plačujejo po modelu pay-as-you-go.
+
+6.) 1. (On-demand resourcing) => Predstavlja vire na zahtevo in stem povezano okretnost.
+
+7.) B => PaaS njegova značilnost je, da razvijalcem omogoča osredotočenost na aplikacijo in podatke, medtem ko ponudnik poskrbi za vse ostalo.
+
+8.) A => Scenarij opisuje sposobnost podjetja, da se hitro odzove na nove potrebe brez omejitev fizične infrastrukture.
+
+9.) A,D => (A: Pinudnik je odgovoren za krpanje fizičnih strečnikov in infrastrukutre. Stranka pa za posodabljanje OS), (D: Ponudnik skrbi za fizično omrežje, kable, usmerjevalnike v podatkovnem centru).
+
+10.) D => V oblaku je Storage vir, ki je namenjen dolgotrajnemu shranjevanju in ohranjanju podatkov.
+
+11.) A => Daje največji nadzor med vsemi modeli oblaka. Predstavljajte si, da najamete "prazen" računalnik v oblaku.
+
+12.) B => Skalibilnost je zmožnost sistema, da se prilagodi glede na potrebe.
+
+13.) B
+
+14.) D => Ponudnik oblaka je odgovoren za varnost samega oblaka, uporabnik pa za varnost svojih podatkov v oblaku.
+
+15.) B => SaaS je model, pri katerem do aplikacije preprosto dostopamo  preko spletnega brskalnika.
+
+16.) B => V tem scenariju je ključno, da razvijalci želijo pisati lastno kodo (custom code), hkrati pa se želijo znebiti bremena upravljanja operacijskih sistemov.
+
+17.) C => Hibridni oblak je model, ki združuje dve različni okolji (Javni oblak in zasebni oblak).
+
+18.) A, C => Nekateri strokovnjaki trdijo, da je javni oblak varnejši od lastnih rešitev predvsem zaradi standardov in certifikatov katere morejo ponudniki vzdrževati.
+
+19.) A => Omogoča nam, da prihranimo saj nam omogoča, da na enem strežniku poganjamo več razlišnih sistemov.
+
+20.) A => Elastičnost omogoča oblaku, da samodejno prilagaja resource trenutnim potrebam.
+
+21.) A => Brez omrežja bi bile vse ostale komponente izolirane in neuporabne.
+
+22.) C => Podobna sta si pri sistemu virtualizacije
+
+23.) B => Nikoli ne plačamo enkratnega zneska saj sistem deluje na modelu pay-as-u-go
+
+24.) A => Model deljene odgovornosti je temelj varnosti v oblaku. Ponudnik je odgovoren za varnost oblaka in uporabnik za varnost v oblaku.
+
+25.) D => Strukturirani podatki so strogo organizirani običajno so v tabelah. Baze podatkov so nameske storitve, ki nam omogočajo hitro iskanje in posodabljanje.

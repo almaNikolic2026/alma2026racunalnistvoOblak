@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nakupni seznam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Nakupni seznam</h1>
+      <p>Vnesi nov izdelek in kolicino. Podatki se shranijo v MariaDB bazo.</p>
+
+      <form action="vstavi.php" method="post">
+        <div class="row">
+          <label for="element">Element</label>
+          <input type="text" id="element" name="element" placeholder="npr. kruh" required>
+        </div>
+
+        <div class="row">
+          <label for="kolicina">Kolicina</label>
+          <input type="number" id="kolicina" name="kolicina" min="1" value="1" required>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit">Shrani element</button>
+          <a class="btn btn-secondary" href="izpis.php">Poglej izpis</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

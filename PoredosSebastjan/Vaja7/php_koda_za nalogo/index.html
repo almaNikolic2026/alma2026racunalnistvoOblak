@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nakupni seznam</title>
+  </head>
+  <body>
+    <h1>Dodaj element</h1>
+
+    <form action="vstavi.php" method="post">
+      <label for="element">Element:</label>
+      <input type="text" id="element" name="element" required />
+      <br /><br />
+
+      <label for="kolicina">Količina:</label>
+      <input type="number" id="kolicina" name="kolicina" required />
+      <br /><br />
+
+      <button type="submit">Shrani</button>
+    </form>
+
+    <br />
+    <a href="izpis.php">Poglej seznam</a>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+1. Kako se imenuje naslov računalnika, s katerim ga identificiramo v omrežju?
+IP naslov.
+2. Kaj je data center?
+To je prostor, kjer so fizični strežniki in druga oprema, ki poganja aplikacije in hrani podatke.
+3, Kaj pomeni CIDR zapis 192.168.0.16/28?
+To je mrežje z določenim razponom IP naslovov/računalnikov, v tem primeru 16.
+4. Kako naredimo podomrežje privatno?
+Tako da v routing table ni poti do internet gatewaya.
+5. Kako naredimo podomrežje javno?
+Dodamo route do internet gatewaya in omogočimo javne IP naslove.
+6. Kaj dosežemo, če imamo vire v različnih AZ?
+Večjo zanesljivost, ker če ena odpove, druge še delujejo.
+7. Kaj je scp? Čemu služi? Kaj lahko uporabimo namesto scp?
+scp je ukaz za prenos datotek preko SSH. Namesto njega lahko uporabimo rsync ali sftp.
+8. Čemu je namenjena "routing table"
+Določa, kam se usmerja promet iz omrežja.
+9. Kaj moramo nastaviti, da so računalniki v podomrežjih vidni med seboj?
+Routing in pravila v security groups.
+10. Zakaj v tej infrastrukturi uporabljamo ločene podomrežje za spletni strežnik in podatkovni strežnik?
+Zaradi večje varnosti in nadzora nad prometom.
+11. Zakaj mora biti spletni strežnik v javnem subnetu, podatkovni strežnik pa v privatnem subnetu?
+Spletni mora biti dostopen uporabnikom, baza pa ne.
+12. Zakaj ne dovolimo neposrednega dostopa iz interneta do podatkovne baze? Kaj bi se lahko zgodilo?
+Ker bi lahko kdo dostopal do podatkov ali jih uničil.
+13. Zakaj uporabljamo security groups, če imamo že podomrežja?
+Ker omogočajo bolj natančen nadzor nad prometom.
+14. Zakaj morata biti subnet2 in subnet3 v različnih availability zonah? Kaj s tem pridobimo?
+Da sistem še vedno dela, če ena zona odpove.
+15. Zakaj se za dostop do EC2 uporablja SSH ključ, ne pa geslo?
+Ker je bolj varen.
+16. Kaj bi se zgodilo, če bi bila MariaDB baza v javnem subnetu z odprtim portom 3306 za internet?
+Vsak bi se lahko poskušal povezati na bazo, kar je varnostno tveganje.
+17. Zakaj mora imeti EC2 strežnik z aplikacijo dostop do podatkovne baze preko privatnega omrežja (VPC) in ne preko javnega IP?
+Ker je varneje in promet ne gre čez internet.
+18. Kaj bi se zgodilo, če bi izbrisali internet gateway iz VPC? Katere storitve bi prenehale delovati?
+Ne bi bilo več dostopa do interneta, ne bi deloval SSH iz zunanjega omrežja in tudi stvari kot apt update ne bi delale.

@@ -1,0 +1,16 @@
+aws ec2 run-instances `
+--image-id ami-0da1f66573556d917 `
+--instance-type t3.micro `
+--key-name almaKeyECtest `
+--subnet-id subnet-0610889fd56882c3a `
+--security-group-ids sg-0a502eb76f6a212c1 `
+--associate-public-ip-address `
+--user-data "#!/bin/bash
+apt update -y
+apt install apache2 -y
+systemctl enable apache2
+systemctl start apache2" `
+--count 1 `
+--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=almaEC2-apache}]" `
+--query "Instances[*].[InstanceId,PrivateIpAddress,PublicIpAddress,State.Name]" `
+--output table

@@ -1,0 +1,11 @@
+aws ec2 run-instances --% `
+    --region us-east-1 `
+    --image-id ami-04ddaf74eafdbc264 `
+    --count 1 `
+    --instance-type t3.micro `
+    --key-name danielECkeytest `
+    --security-group-ids sg-07888b13d66931987 `
+    --user-data file://install_apache.sh `
+    --associate-public-ip-address `
+    --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=almaEC2-2}]" `
+    --block-device-mappings "[{\"DeviceName\":\"/dev/xvda\",\"Ebs\":{\"VolumeSize\":8,\"DeleteOnTermination\":true,\"VolumeType\":\"gp3\"}}]"
