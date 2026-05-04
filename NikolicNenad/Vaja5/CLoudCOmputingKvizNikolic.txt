@@ -1,0 +1,124 @@
+1. Which of the following is an example of virtualization?
+
+   Pravilen odgovor je d) Multiple virtual machines running on the same server. Namen virtualizacije da na enem fizičnem strežniku lahko poganjamo več različnih virtualizacij.
+
+
+2. Which resources provide the ‘brains’ to process your workloads, including what is required to process and run requests from applications?
+
+   Pravilen odgovor je a) Compute. Za izvajanje procesov potrebujemo računske vire, kot sta CPU in RAM, ki omogočajo obdelavo podatkov ter izvajanje aplikacij in njihovih zahtevkov.		
+
+
+3. When you need to provision a resource within the cloud, _________ makes it almost immediately available to you to allocate where and when you need it.
+
+   Pravilen odgovor je d) on-demand resourcing. V oblaku lahko resource dobiš takoj ni jih potrebno čakati.
+   
+
+4.A ________ cloud deployment model is where a vendor makes available the use of shared infrastructure, including compute, storage and network resources, that can be provisioned on demand and typically accessed over the internet.
+ 
+   Pravilen odgovor je d) public. V javnem oblaku ponudnik omogoča uporabo deljene infrastrukture (compute, storage, network), ki je dostopna preko interneta.
+   
+
+5.How are costs generally charged for cloud resources?
+
+  Pravilen odgovor je a) Utility-based metering where you only pay for what you use. V oblaku plačaš samo to, kar porabiš.
+
+
+6.As an example of an important cloud characteristic, let's say you deploy a small website today. Next week, you add complex artificial intelligence services to it that are provided by a public cloud vendor. The following week, you deploy your website to multiple regions around the globe.
+  
+  Pravilen odgovor je 1. On-demand resourcing. Stvari dodajaš po potrebi oz. zahtevi uporabnikov.
+
+
+7.The ___________________ cloud service model offers a balance between customization and user control, allowing developers to focus on designing at the application layer while the service handles the administration of the virtual architecture, including the network and operating system.
+  
+  Pravilen odgovor je b) Platform-as-a-Service.Razvijalec se ukvarja samo z razvojem aplikacije in ne z OS ali strežnišo infrastrukturo.
+  
+  
+8.As an example of an important cloud characteristic, let's say you deploy a small website today. Next week, you add complex artificial intelligence services to it that are provided by a public cloud vendor. The following week, you deploy your website to multiple regions around the globe.
+ 
+  Pravilen odgovor je a) Growth. Besedilo opisuje rast sitema skozi nek čas.
+
+  
+9.Which of the following are not the sole responsibility of public cloud customers? (Choose 2 answers)
+
+  Pravilna odgovor sta a) Patch Management in c) Web Client protection. Pri najemu oblaka se odgovornost deli.
+  
+    
+10.Which cloud resource saves and retains data, and is available at an almost unlimited amount within the cloud?
+   
+    Pravilen odgovor je d) Storage. Storage omogoča shranjevanje in ohranjanje podatkov v oblaku.
+
+
+11.The ___________________ cloud service model offers the greatest amount of user customization and control but requires the greatest amount of user administration including the operating system, but not physical hardware.
+   
+   Pravilen odgovor je a) Infrastructure-as-a-Service (IaaS). Pri IaaS uporabniku upravlja z infrastrukturo.
+
+
+12.What benefit of cloud computing allows you to increase or decrease the power or quantity of resources at any time, without extensive installation or physical processes of provisioning?
+   
+   Pravilen odgovor je b) Scalability. Scalability omogoča povečanje ali zmanjšanje količine virov glede na potrebe.
+   
+13.You have been hired as an IT summer intern for a small, but quickly expanding, restaurant chain. The restaurant chain owner wants to expand her online presence by creating a website that will add more online features such as downloadable menus, real-time reservations, online ordering, web-based email, and a possible interactive chat during restaurant hours.
+The website will have high access demands from the 4:00 pm to 11:00 pm peak hours, and slower access demands during off-peak hours. The owner does not have any IT experience and does not want to become involved in the extra work of maintaining IT equipment.
+   
+    Pravilni dogovor je b) Implement a public cloud-computing environment. Oblak ni potrebo vzdržeavt, felskisbilen in plačaš po porabi.
+
+14.Public cloud vendors have a common definition of what aspects of security are the vendor's responsibility and what aspects of security are the end user's responsibility. This is referred to as the Shared Responsibility Model.
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+   
+   Pravilen odgovor je d) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store. Uporabnik skrbi za varnost svojih podatkov.
+
+15.The ___________________ model requires no software installation and focuses on design simplicity and ease of use. It offers a minimal level of service customization.
+
+   Pravilen odgovor je b) Software-as-a-Service. Aplikacijo uporabljaš preko brskalnika.
+
+16.You are leading a team of developers on a project whose goal is to improve customer experience on a credit card company's website.
+The solution requires that the developers write business requirement-oriented custom code. Your client wants the developers not to have the overhead of managing operating systems, runtimes, and middleware.
+   
+   Pravilen odgovor je b) Platform as a Service (PaaS). Ker razvijalci pišejo kodo, in ne skrbijo za infrastrukturo.
+
+
+17.A business uses a combination of vendor-managed hardware, such as AWS, Azure, or Google Cloud, and its own hardware on premises to host virtualized resources. This is an example of the ___________ cloud deployment model.
+   
+   Pravilen odgovor je c) hybrid. Hybridni oblak omogoča da del deluje lokalno del pa v oblaku.
+
+18.One can argue that security on the public cloud is superior to on-premise security. Why is this? (Choose 2 answers)
+   
+   Pravilna odgovora sta a) Public cloud vendor services must meet international security requirements. in c) Public cloud vendor services must meet multiple business industries' security and governance requirements.
+   Ponudniki storitev sledijo standardom. 
+
+
+19.What is a key benefit of Virtualization?
+
+   Pravilen odgovor je a) Reduced capital expenditure. Manj stroškov, ni potrebno kupiti toliko fizične opreme.
+   
+
+20.Which of the following cloud computing concepts refers to increasing or decreasing compute resources based on demand?
+
+   Pravilen odgovor je a) Elasticity. To pommeni avtomasko prilagajanje glede obremenitev.
+
+
+21.Which resources provide the connectivity allowing all other resources to communicate with each other?
+   
+   Pravilen odgovor je a) Network. Network omogoča da se naprave med seboj povežejo.
+
+
+22.In what way is a private cloud model similar to a public cloud model?
+   
+   Pravilen odgovor je c) Both private and public cloud models use virtualization to differentiate themselves from traditional on-premise servers.
+   Oba uporabljata virtualizacijo za delitev in upravljanje virov.
+
+
+23.Which of the following is not a characteristic of the public cloud?
+   
+   Pravilen odgovor je b) One-time costs for virtual resources. Ni enkratnega plačila zračunava se porabi.
+
+
+24.Public cloud vendors have a common definition of what aspects of security are the vendor's responsibility and what aspects of security are the end user's responsibility. This is referred to as the Shared Responsibility Model.
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+   
+   Pravilni odgovor je a) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store.Uporabnik skrbi za podatke.
+
+
+25. What cloud resource type stores structured data used by cloud applications?
+    
+    Pravilen odgovor je d) Database. Baza shranjuje struktuirane podatke v tabelah in relacijah.
