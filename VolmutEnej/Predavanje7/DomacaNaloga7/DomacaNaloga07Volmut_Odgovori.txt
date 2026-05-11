@@ -1,0 +1,53 @@
+Kako se imenuje naslov računalnika, s katerim ga identificiramo v omrežju?
+Gre za IP naslov, ki služi kot unikaten identifikator naprave v omrežju, da se paketi sploh lahko dostavijo na pravi cilj.
+
+Kaj je data center?
+To je namenski objekt, kjer je centralizirana vsa IT oprema - strežniki, mrežna stikala, sistemi za shranjevanje podatkov. Urejeno ima močno hlajenje, neprekinjeno napajanje in visoko stopnjo fizične varnosti.
+
+Kaj pomeni CIDR zapis 192.168.0.16/28?
+Številka za poševnico (/28) pove, koliko IP naslovov imamo na voljo v tem podomrežju. V tem primeru gre za majhen blok 16-ih naslovov, kjer se omrežje začne pri 192.168.0.16.
+
+Kako naredimo podomrežje privatno?
+Tako, da v njegovi tabeli usmerjanja (routing tablu), ne nastavimo poti do Internet Gateway-a. Brez te poti naprave v subnetu nimajo neposrednega stika z zunanjim spletom.
+
+Kako naredimo podomrežje javno?
+V tabelo usmerjanja za ta subnet vnesemo cilj 0.0.0.0/0, ki kaže na Internet Gateway, s čimer omogočimo dvosmerno komunikacijo z internetom.
+
+Kaj dosežemo, če imamo vire v različnih AZ?
+Dosežemo visoko razpoložljivost, če ena cona (AZ) zaradi tehnične okvare izpade, sistem še vedno deluje preko virov v drugi coni.
+
+Kaj je scp? Čemu služi? Kaj lahko uporabimo namesto scp?
+scp je protokol za varen prenos datotek med hosti, ki temelji na SSH. Uporablja se za kopiranje preko terminala. Alternative scp-ja so rsync, sftp ali grafična orodja tipa WinSCP.
+
+Čemu je namenjena "routing table"?
+Služi kot nabor pravil, ki usmerjajo omrežni promet. Vsaka vrstica določa, na kateri gateway ali vmesnik naj gre paket, glede na njegov ciljni IP naslov.
+
+Kaj moramo nastaviti, da so računalniki podomrežjih vidni med seboj?
+Ponavadi so poti znotraj VPC-ja nastavljene avtomatsko, zato moramo paziti predvsem na Security Groups in Network ACL-je, da dovoljujejo promet na portih, ki jih te naprave uporabljajo za komunikacijo.
+
+Zakaj v tej infrastrukturi uporabljamo ločene podomrežje za spletni strežnik in podatkovni strežnik?
+Zaradi varnosti, kajti s tem izoliramo bazo od spletnega strežnika, kar zmanjša tveganje pri morebitnem vdoru.
+
+Zakaj mora biti spletni strežnik v javnem subnetu, podatkovni strežnik pa v privatnem subnetu?
+Spletni strežnik mora biti dostopen uporabnikom z interneta, baza pa ne. Zato baza nima javnega IP-ja in je skrita v ozadju, kjer sprejema samo promet iz aplikacije.
+
+Zakaj ne dovolimo neposrednega dostopa iz interneta do podatkovne baze? Kaj bi se lahko zgodilo?
+Ker bi direkten dostop pomenil ogromno varnostno luknjo in bi napadalec lahko prišel do podatkov. Lahko bi prišlo do kraje podatkov, brisanja baze ali vbrizgavanje zlonamerne kode.
+
+Zakaj uporabljamo security groups, če imamo že podomrežja?
+Security Groups delujejo kot statični požarni zid na nivoju same instance. Omogočajo natančno določanje porta in vira, kar je dodatna plast zaščite.
+
+Zakaj morata biti subnet2 in subnet3 v različnih availability zonah? Kaj s tem pridobimo?
+S tem pridobimo boljšo odpornost na napake. Če celotna availability zona odpove, imamo kopijo baze ali aplikacije v drugi coni, kar prepreči popoln izpad storitve.
+
+Zakaj se za dostop do EC2 uporablja SSH ključ, ne pa geslo?
+SSH ključi so kriptografsko dosti močnejši od gesel. Gesla so ranljiva na "brute-force" napade, ključa pa brez privatnega dela praktično ni mogoče ponarediti.
+
+Kaj bi se zgodilo, če bi bila MariaDB baza v javnem subnetu z odprtim portom 3306 za internet?
+Baza bi bila izpostavljena stalnim napadom. Verjetnost uspešnega vdora bi se povečala, hkrati pa bi po nepotrebnem trošili vire strežnika za preprečitev teh napadov.
+
+Zakaj mora imeti EC2 strežnik z aplikacijo dostop do podatkovne baze preko privatnega omrežja (VPC) in ne preko javnega IP?
+Preko privatnega omrežja je promet hitrejši, bolj varen in stroškovno boljši, saj se promet znotraj VPC-ja običajno ne zaračunava.
+
+Kaj bi se zgodilo, če bi izbrisali internet gateway iz VPC? Katere storitve bi prenehale delovati?
+VPC bi izgubil stik z zunanjim svetom. Nehale bi delovati vse javne spletne strani, SSH dostop od zunaj bi se prekinil, strežniki pa ne bi mogli več dostopati do posodobitev ali zunanjih API-jev.

@@ -1,0 +1,95 @@
+Which of the following is an example of virtualization?
+Odgovor: d) Multiple virtual machines running on the same server
+Razlaga: Virtualizacija je opredljena kot tehnologija, ki omogoča več virtualnih strojev, od katerih vsak izvaja svoj operacijski sistem na enem samem fizičnem strežniku.
+
+Which resources provide the ‘brains’ to process your workloads including what is required to process and run requests from applications??
+Odgovor: a) Compute
+Razlaga: Compute objekti zagotavljajo "možgane" za obdelavo delovnih obremenitev, podobno kot procesor (CPU) in pomnilnik (RAM) v fizičnem strežniku.
+
+When you need to provision a resource within the cloud, _________ makes it almost immediately available to you to allocate where and when you need it.
+Odgovor: d) on-demand resourcing
+Razlaga: To pomeni, da so viri na voljo takoj, ko jih potrebujemo, brez čakanja na nakup ali namestitve strojne opreme.
+
+A ________ cloud deployment model is where a vendor makes available the use of shared infrastructure, including compute, storage and network resources, that can be provisioned on demand and typically accessed over the internet. 
+Odgovor: d) public
+Razlaga: Public cloud uporablja skupno infrastrukturo, ki je dostopna prek interneta za splošno uporabo.
+
+How are costs generally charged for cloud resources?
+Odgovor: a) Utility-based metering where you only pay for what you use.
+Razlaga: Literatura primerja plačilo oblaka s plačilom elektrike, torej da plačaš le za tisto, kar dejansko porabiš in dokler vir uporabljaš.
+
+What concept or characteristic of cloud computing does this represent? (AI services, global regions)
+Odgovor: 1. On-demand resourcing IN a) Growth
+Razlaga: Opisano je dodajanje novih zmogljivosti umetne inteligence in širitev na nove trge, to najbolje predstavlja Growth, saj oblak omogoča hitro širitev brez omejitev klasičnih podatkovnih centrov.
+
+The ___________________ cloud service model offers a balance between customization and user control, allowing developers to focus on designing at the application layer while the service handles the administration of the virtual architecture, including the network and operating system. 
+Odgovor: b) Platform-as-a-Service (PaaS)
+Razlaga: PaaS razvijalcem omogoča osredotočanje na kodo, ponudnik pa upravlja operacijski sistem in osnovno arhitekturo.
+
+Which of the following are not the sole responsibility of public cloud customers? (Choose 2 answers)
+Odgovor: a) Patch Management, d) Network Controls
+Razlaga: Ponudnik oblaka skrbi za patching (krpanje) osnovne infrastrukture in fizično omrežje, medtem ko stranka skrbi za podatke in aplikacije. To predstavlja model deljene odgovornosti.
+
+Which cloud resource saves and retains data, and is available at an almost unlimited amount within the cloud?
+Odgovor: d) Storage
+Razlaga: So kot viri, ki omogočajo shranjevanje podatkov in so v oblaku neomejeni.
+
+The ___________________ cloud service model offers the greatest amount of user customization and control but requires the greatest amount of user administration including the operating system, but not physical hardware. 
+Odgovor: a) Infrastructure-as-a-Service (IaaS)
+Razlaga: IaaS ponuja najvišjo raven nadzora, saj uporabnik sam konfigurira virtualno omrežje in operacijski sistem.
+
+What benefit of cloud computing allows you to increase or decrease the power or quantity of resources at any time, without extensive installation or physical processes of provisioning? 
+Odgovor: b) Scalability
+Razlaga: Gre za zmožnost hitrega povečanja ali zmanjšanja virov glede na povpraševanje.
+
+Recommendation for restaurant owner (no IT experience, peak hours)?
+Odgovor: b) Implement a public cloud-computing environment.
+Razlaga: Ker ponudnik poskrbi za vzdrževanje strojne opreme, omogoča pa samodejno skaliranje.
+
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+Odgovor: d) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store
+Razlaga: Ponudnik zagotavlja storitev, uporabnik pa je odgovoren za varnost svojih podatkov v njej, npr. šifriranje.
+
+The ___________________ model requires no software installation and focuses on design simplicity and ease of use. It offers a minimal level of service customization. 
+Odgovor: b) Software-as-a-Service (SaaS)
+Razlaga: Ne zahteva namestitve in ponuja najmanj prilagajanja, saj aplikacijo v celoti upravlja ponudnik.
+
+Which of the following cloud offerings would you suggest to your client? (Custom code, no OS overhead)
+Odgovor: b) Platform as a Service (PaaS)
+Razlaga: Je najboljša izbira za razvijalce, ki želijo pisati kodo, brez potrebe ukvarjanja z upravljanjem operacijskih sistemov.
+
+A business uses a combination of vendor-managed hardware and its own hardware on premises to host virtualized resources. This is an example of the ___________ cloud deployment model.
+Odgovor: c) hybrid
+Razlaga: Gre za kombinacijo javnega in zasebnega oblaka (lastne strojne opreme).
+
+One can argue that security on the public cloud is superior to on-premise security. Why? (Choose 2 answers)
+Odgovor: a) Public cloud vendor services must meet international security requirements, c) Public cloud vendor services must meet multiple business industries' security and governance requirements.
+Razlaga: Ponudniki morajo dosegati stroge globalne standarde, katera so težje dosegljiva za posamezna podjetja v podatkovnih centrih.
+
+What is a key benefit of Virtualization?
+Odgovor: a) Reduced capital expenditure
+Razlaga: Ker potrebujemo manj fizične strojne opreme (več virtualnih računalnikov na enem strežniku), so manjši začetni investicijski stroški.
+
+Which of the following cloud computing concepts refers to increasing or decreasing compute resources based on demand?
+Odgovor: a) Elasticity
+Razlaga: Elastičnost se nanaša na zmožnost sistema, da se samodejno prilagaja trenutnim potrebam. Lahko se širi ali krči.
+
+Which resources provide the connectivity allowing all other resources to communicate with each other?
+Odgovor: a) Network
+Razlaga: Zagotavljajo povezljivost med compute, storage in database viri.
+
+In what way is a private cloud model similar to a public cloud model?
+Odgovor: c) Both private and public cloud models use virtualization to differentiate themselves from traditional on premise servers.
+Razlaga: Od tradicionalnih fizičnih strežnikov se ločujeta, da oba modela uporabljata virtualizacijo za ustvarjanje baz deljenih virov.
+
+Which of the following is not a characteristic of the public cloud?
+Odgovor: b) One-time costs for virtual resources
+Razlaga: Stroški v oblaku niso enkratni, vendar temeljijo na porabi - utility-based metering.
+
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+Odgovor: a) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store
+Razlaga: Ponudnik zagotavlja storitev, uporabnik pa je odgovoren za varnost svojih podatkov v njej, npr. šifriranje.
+
+What cloud resource type stores structured data used by cloud applications?
+Odgovor: d) Database
+Razlaga: Baze podatkov so specifično namenjene shranjevanju urejenih, strukturiranih podatkov za aplikacije.
