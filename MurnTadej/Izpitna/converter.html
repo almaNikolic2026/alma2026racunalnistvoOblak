@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temperature Converter — AWS Lambda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --accent: #ff6b2b;
+      --text: #e8e8f0;
+      --muted: #6b6b88;
+      --green: #4ade80;
+      --red: #f87171;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 480px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,107,43,0.12);
+      border: 1px solid rgba(255,107,43,0.3);
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .subtitle {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 1.1rem;
+      padding: 0.8rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+    }
+
+    button {
+      width: 100%;
+      background: var(--accent);
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.9rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+
+    button:hover { opacity: 0.85; }
+    button:active { transform: scale(0.98); }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .result {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      display: none;
+    }
+
+    .result.visible { display: block; animation: fadeUp 0.3s ease; }
+    .result.success { border-color: rgba(74,222,128,0.3); }
+    .result.error { border-color: rgba(248,113,113,0.3); }
+
+    .result-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .result-value.error-text { color: var(--red); font-size: 0.9rem; }
+
+    .result-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .api-info {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    .api-info span { color: var(--accent); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">⚡ AWS Lambda + API Gateway</div>
+    <h1>Celsius → <span>Fahrenheit</span></h1>
+    <p class="subtitle">// Serverless pretvorba temperature</p>
+
+    <div class="input-group">
+      <label>Temperatura v Celsius</label>
+      <input type="number" id="celsius" placeholder="npr. 100" />
+    </div>
+
+    <button id="btn" onclick="convert()">Pretvori →</button>
+
+    <div class="result" id="result">
+      <div class="result-label">Rezultat</div>
+      <div class="result-value" id="resultValue"></div>
+      <div class="result-sub" id="resultSub"></div>
+    </div>
+
+    <div class="api-info">
+      API: <span>2gu2fab8r7.execute-api.eu-central-1.amazonaws.com</span><br>
+      Route: <span>POST /convert</span>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'https://2gu2fab8r7.execute-api.eu-central-1.amazonaws.com/convert';
+
+    async function convert() {
+      const input = document.getElementById('celsius').value;
+      const btn = document.getElementById('btn');
+      const result = document.getElementById('result');
+      const resultValue = document.getElementById('resultValue');
+      const resultSub = document.getElementById('resultSub');
+
+      if (input === '') return;
+
+      btn.disabled = true;
+      btn.textContent = 'Kličem Lambda...';
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ celsius: parseFloat(input) })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          resultValue.textContent = data.fahrenheit + ' °F';
+          resultValue.className = 'result-value';
+          resultSub.textContent = data.message;
+          result.className = 'result visible success';
+        } else {
+          resultValue.textContent = 'Napaka: ' + (data.error || 'Neznan error');
+          resultValue.className = 'result-value error-text';
+          resultSub.textContent = '';
+          result.className = 'result visible error';
+        }
+      } catch (e) {
+        resultValue.textContent = 'Napaka pri klicanju API-ja';
+        resultValue.className = 'result-value error-text';
+        resultSub.textContent = e.message;
+        result.className = 'result visible error';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Pretvori →';
+    }
+
+    document.getElementById('celsius').addEventListener('keydown', e => {
+      if (e.key === 'Enter') convert();
+    });
+  </script>
+</body>
+</html>

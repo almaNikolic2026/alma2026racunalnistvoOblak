@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Izpitna Naloga — S3 + CloudFront</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --border: #1e1e2e;
+      --accent: #ff6b2b;
+      --accent2: #ffb347;
+      --text: #e8e8f0;
+      --muted: #6b6b88;
+      --green: #4ade80;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Syne', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,107,43,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,107,43,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,107,43,0.12);
+      border: 1px solid rgba(255,107,43,0.3);
+      color: var(--accent);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.8rem;
+      animation: fadeUp 0.6s ease both;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(255,107,43,0.4);
+      transform: translateY(-2px);
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+
+    .card-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.6rem;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    /* Tech stack */
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .tag {
+      background: rgba(255,107,43,0.08);
+      border: 1px solid rgba(255,107,43,0.2);
+      color: var(--accent2);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    /* Status */
+    .status-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    .status-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.2rem;
+      border-radius: 4px;
+    }
+
+    .status-item .label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+
+    .status-item .value {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .value.online { color: var(--green); }
+    .value.orange { color: var(--accent); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeUp 0.6s ease 0.5s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">☁ AWS Izpitna Naloga</div>
+      <h1>Statična spletna stran<br>na <span>AWS S3</span></h1>
+      <p class="subtitle">// Gostovana z S3 + CloudFront CDN</p>
+    </header>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-label">01 — Projekt</div>
+        <h2>Kaj je ta stran?</h2>
+        <p>
+          To je statična spletna stran, gostovana na Amazon S3 in dostopna prek CloudFront CDN.
+          Stran nima strežniške logike — vse datoteke (HTML, CSS) so shranjene v S3 bucketu
+          in dostavljene globalno prek CloudFrontove mreže robnih lokacij.
+        </p>
+        <div class="stack">
+          <span class="tag">Amazon S3</span>
+          <span class="tag">CloudFront CDN</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">Static Hosting</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">02 — Arhitektura</div>
+        <h2>Kako deluje?</h2>
+        <p>
+          Brskalnik pošlje zahtevo na CloudFront. Če je vsebina že v predpomnilniku robnega strežnika,
+          jo CloudFront vrne direktno. Sicer jo prenese iz S3 bucketa, shrani v predpomnilnik
+          in dostavi uporabniku — z minimalno latenco.
+        </p>
+        <div class="stack">
+          <span class="tag">Edge Locations</span>
+          <span class="tag">Cache</span>
+          <span class="tag">HTTPS</span>
+          <span class="tag">Low Latency</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-label">03 — Stroški</div>
+        <h2>Zakaj AWS Free Tier?</h2>
+        <p>
+          S3 nudi 5 GB prostora in 20.000 GET zahtev brezplačno na mesec. CloudFront pa
+          1 TB prenosa podatkov in 10 milijonov zahtev brezplačno. Za študijske projekte
+          je strošek praktično nič.
+        </p>
+        <div class="stack">
+          <span class="tag">Free Tier</span>
+          <span class="tag">5 GB S3</span>
+          <span class="tag">1 TB CloudFront</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="status-row">
+      <div class="status-item">
+        <div class="label">Status strežnika</div>
+        <div class="value online">● ONLINE</div>
+      </div>
+      <div class="status-item">
+        <div class="label">Gostovanje</div>
+        <div class="value orange">AWS S3</div>
+      </div>
+      <div class="status-item">
+        <div class="label">CDN</div>
+        <div class="value orange">CloudFront</div>
+      </div>
+      <div class="status-item">
+        <div class="label">Protokol</div>
+        <div class="value">HTTPS</div>
+      </div>
+    </div>
+
+    <footer>
+      <span>static-web---izpitna-naloga</span>
+      <span>AWS S3 + CloudFront · Izpitna naloga 2025</span>
+    </footer>
+  </div>
+</body>
+</html>
