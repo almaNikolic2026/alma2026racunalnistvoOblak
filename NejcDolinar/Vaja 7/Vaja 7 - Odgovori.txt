@@ -1,0 +1,54 @@
+-Kaj je data center?
+Velika stavba polna strežnikov, diskov in omrežne opreme.
+
+-Kaj pomeni CIDR zapis 192.168.0.16/28?
+/28 = 16 naslovov (14 uporabnih). Začne se na .16, konča na .31.
+
+-Kako naredimo podomrežje privatno?
+Ne dodamo internet gatewaya v route table in ne damo ji public IP naslov
+
+-Kako naredimo podomrežje javno?
+Dodamo ji Public ip nalsov in V route table dodamo 0.0.0.0/0 → Internet Gateway
+
+-Kaj dosežemo, če imamo vire v različnih AZ?
+
+Če ena AZ pade (izpad, požar...), druga še vedno deluje. Redundanca.
+
+-Kaj je scp? Čemu služi? Kaj lahko uporabimo namesto scp?
+
+Ukaz za kopiranje datotek med računalniki prek SSH. Namesto njega lahko uporabimo WinSCP ali SFTP.
+
+-Čemu je namenjena "routing table"
+Pove omrežju kam naj pošlje promet — npr. internet gre skozi IGW, lokalni promet ostane znotraj VPC.
+
+-Kaj moramo nastaviti, da so računalniki podomrežjih vidni med seboj?
+Nič posebnega — znotraj istega VPC se računalniki že vidijo avtomatično prek lokalnega routinga.
+
+-Zakaj v tej infrastrukturi uporabljamo ločene podomrežje za spletni strežnik in podatkovni strežnik?
+Varnost in organizacija — DB ni direktno izpostavljena internetu.
+
+
+-Zakaj mora biti spletni strežnik v javnem subnetu, podatkovni strežnik pa v privatnem subnetu?
+Web mora biti dostopen uporabnikom, DB pa samo spletnemu strežniku — ne vsem.
+
+-Zakaj ne dovolimo neposrednega dostopa iz interneta do podatkovne baze? Kaj bi se lahko zgodilo?
+Ker bi kdorkoli lahko poskušal vdreti, ukrasti ali izbrisati podatke.
+
+-Zakaj uporabljamo security groups, če imamo že podomrežja?
+Subneti določajo omrežje, SG pa točno kateri port in od koga. Dvojna zaščita.
+
+-Zakaj morata biti subnet2 in subnet3 v različnih availability zonah? Kaj s tem pridobimo?
+Če ena AZ pade, druga baza še deluje. Visoka razpoložljivost.
+
+-Zakaj se za dostop do EC2 uporablja SSH ključ, ne pa geslo?
+Geslo se da ugibati (brute force). Ključ je kriptografsko bistveno bolj varen.
+
+-Kaj bi se zgodilo, če bi bila MariaDB baza v javnem subnetu z odprtim portom 3306 za internet?
+Kdorkoli na internetu bi lahko poskusil dostopati do baze. Večina baz bi bila vdrana v urah.
+
+-Zakaj mora imeti EC2 strežnik z aplikacijo dostop do podatkovne baze preko privatnega omrežja (VPC) in ne preko javnega IP?
+Hitrejše, varnejše, brezplačno. Prek javnega IP bi promet šel ven iz VPC — počasneje in izpostavljeno.
+
+-Kaj bi se zgodilo, če bi izbrisali internet gateway iz VPC? Katere storitve bi prenehale delovati?
+
+EC2-1 (spletni strežnik) bi postal nedosegljiv iz interneta. Spletna stran bi prenehala delovati. NAT Gateway za privatne subnete bi tudi nehal delovati.
