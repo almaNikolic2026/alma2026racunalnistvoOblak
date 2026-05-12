@@ -1,0 +1,25 @@
+1d) Virtualizacija, ker več navideznih strojev deluje na isti fizični strojni opremi.
+2a) Compute viri zagotavljajo procesorsko moč za izvajanje aplikacij in zahtev.
+3d) Viri so na voljo takoj, ko jih potrebuješ, brez ročnega postavljanja.
+4d) Javni oblak omogoča deljeno infrastrukturo, dostopno prek interneta na zahtevo.
+5a) Plačaš samo toliko, kolikor dejansko uporabiš.
+6-1. Ker se storitve hitro dodajajo in širijo glede na potrebe.
+7b) PaaS omogoča razvoj aplikacij brez skrbi za infrastrukturo in OS.
+8a) Kaže na širjenje in dodajanje novih funkcionalnosti ter globalno razširitev.
+9a) in d) To nista izključno odgovornost uporabnika, ampak sta deljeno upravljani.
+10d) Shranjuje podatke in omogoča skoraj neomejeno kapaciteto.
+11a) Največ nadzora, vključno z OS, vendar brez fizične strojne opreme.
+12b) Omogoča enostavno povečevanje ali zmanjševanje virov po potrebi.
+13b) Najbolj primerno za hitro rast in brez vzdrževanja infrastrukture.
+14d) Šifriranje podatkov je odgovornost uporabnika.
+15b) najmanj nastavitev in enostavna uporaba brez nameščanja programske opreme.
+16b) PaaS je primeren, ko razvijalci pišejo lastno kodo, ne želijo pa upravljati OS, runtime okolja in middleware-a.
+17c) Kombinacija lokalne in oblačne infrastrukture.
+18b) in c) Dokument poudari, da imajo javni ponudniki zelo visoke varnostne standarde in morajo izpolnjevati številne skladnostne zahteve.
+19a) Virtualizacija zmanjša potrebo po nakupu fizične opreme.
+20a) Viri se samodejno prilagajajo trenutnemu povpraševanju.
+21a) Omogoča povezovanje vseh drugih virov.
+22c) Oba uporabljata virtualizacijo, zato sta si private in public cloud v tem podobna.
+23b) To ni značilno za javni oblak.
+24a) Šifriranje je odgovornost uporabnika.
+25d) Shranjuje strukturirane podatke za aplikacije.

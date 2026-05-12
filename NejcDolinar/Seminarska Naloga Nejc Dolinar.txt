@@ -1,0 +1,8 @@
+Nareditev domači cloud storage s nasljendimi storitvami, v AWS
+
+Vse narejeno z kodo na unbuntu
+
+Duplicati: Za shranjevanje strežnika na drugi strežnik
+CloudFlare: Za Shranjevanje podatkov
+PI-hole: za blokiranje ad in nevranih spletnih strani
+Wireguard: Za boljšo zaščito pred napadi

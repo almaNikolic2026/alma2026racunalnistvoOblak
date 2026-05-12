@@ -1,3 +1,0 @@
-Ime: Oliver
-Priimek: Jayasinghe
-

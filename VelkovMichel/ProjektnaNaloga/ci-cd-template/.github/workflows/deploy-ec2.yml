@@ -1,0 +1,112 @@
+name: deploy-ec2
+
+on:
+  push:
+    branches:
+      - main
+      - pr/velkov-michel
+  workflow_dispatch:
+
+env:
+  APP_SOURCE_DIR: VelkovMichel/Vaja6-7/app
+  ARTIFACT_PATH: /tmp/release.tar.gz
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PHP CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y php-cli
+
+      - name: PHP lint
+        run: |
+          set -euo pipefail
+          test -d "${APP_SOURCE_DIR}"
+          find "${APP_SOURCE_DIR}" -type f -name "*.php" -print0 | xargs -0 -n1 php -l
+
+  package:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build release artifact
+        run: |
+          set -euo pipefail
+          tar -czf "${ARTIFACT_PATH}" -C "${APP_SOURCE_DIR}" .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: ${{ env.ARTIFACT_PATH }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: package
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-release
+          path: /tmp
+
+      - name: Prepare SSH key
+        run: |
+          set -euo pipefail
+          umask 077
+          cat > /tmp/ec2_key.pem <<'EOF'
+          ${{ secrets.EC2_KEY }}
+          EOF
+          chmod 600 /tmp/ec2_key.pem
+
+      - name: Upload artifact and scripts to EC2
+        run: |
+          set -euo pipefail
+          scp -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no /tmp/release.tar.gz "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/release.tar.gz"
+          scp -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no \
+            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/deploy_release.sh \
+            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/migrate_rds.sh \
+            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/healthcheck.sh \
+            VelkovMichel/ProjektnaNaloga/ci-cd-template/scripts/rollback.sh \
+            "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/tmp/"
+
+      - name: Run deployment on EC2
+        run: |
+          set -euo pipefail
+          ssh -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}" \
+            "chmod +x /tmp/deploy_release.sh /tmp/migrate_rds.sh /tmp/healthcheck.sh /tmp/rollback.sh && \
+             APP_PATH='${{ secrets.APP_PATH }}' ARTIFACT_PATH='/tmp/release.tar.gz' RELEASE_SHA='${{ github.sha }}' \
+             RDS_HOST='${{ secrets.RDS_HOST }}' RDS_DB='${{ secrets.RDS_DB }}' RDS_USER='${{ secrets.RDS_USER }}' RDS_PASS='${{ secrets.RDS_PASS }}' \
+             /tmp/deploy_release.sh"
+
+      - name: Run DB migration on EC2
+        run: |
+          set -euo pipefail
+          ssh -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}" \
+            "RDS_HOST='${{ secrets.RDS_HOST }}' RDS_DB='${{ secrets.RDS_DB }}' RDS_USER='${{ secrets.RDS_USER }}' RDS_PASS='${{ secrets.RDS_PASS }}' RELEASE_SHA='${{ github.sha }}' /tmp/migrate_rds.sh"
+
+      - name: Health check with auto rollback
+        run: |
+          set +e
+          ssh -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}" \
+            "APP_URL='${{ secrets.APP_URL }}' /tmp/healthcheck.sh"
+          STATUS=$?
+          set -e
+
+          if [ "$STATUS" -ne 0 ]; then
+            echo "Health check failed. Running rollback..."
+            ssh -i /tmp/ec2_key.pem -o StrictHostKeyChecking=no "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}" "/tmp/rollback.sh"
+            exit 1
+          fi
+
+          echo "Deploy completed successfully."
